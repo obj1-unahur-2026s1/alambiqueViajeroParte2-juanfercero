@@ -55,11 +55,11 @@ object lasVegas{
 }
 
 object antigualla {
-    var gangsters = 7
+    var gangsters = 10
     method puedeFuncionar() = gangsters.even()
     method rapido() = gangsters > 6
     method desgaste(){
-        gangsters = gangsters -1
+        gangsters = gangsters -2
     }
     method patenteValida() = chatarra.rapido() 
 

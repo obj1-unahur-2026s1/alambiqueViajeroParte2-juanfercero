@@ -80,4 +80,11 @@ test "luke viaja a hurlingham en el convertible convertido en chatarra" {
       centroDeInscripcion.recibirVehiculo(moto)
       assert.equals(1, centroDeInscripcion.inscriptos().size())
     }
+
+    test "realizar carrera"{
+      centroDeInscripcion.recibirVehiculo(chatarra)
+      centroDeInscripcion.recibirVehiculo(antigualla)
+      centroDeInscripcion.realizarCarrera()
+      assert.equals(antigualla, centroDeInscripcion.ganador())
+    }
   }
