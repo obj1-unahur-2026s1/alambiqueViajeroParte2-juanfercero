@@ -52,4 +52,7 @@ object centroDeInscripcion {
     }
 
     method ganador() = ultimoGanador
+
+    // metodo para Pierre Nodoyuna y Patán
+    method vehiculosQueLlegaronALaCarrera() = vehiculosQueLlegaronALaCarrera
 }

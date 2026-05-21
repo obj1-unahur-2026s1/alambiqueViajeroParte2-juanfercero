@@ -83,6 +83,7 @@ test "luke viaja a hurlingham en el convertible convertido en chatarra" {
 
     test "realizar carrera"{
       centroDeInscripcion.recibirVehiculo(chatarra)
+      antigualla.subirGangsters(3)
       centroDeInscripcion.recibirVehiculo(antigualla)
       centroDeInscripcion.realizarCarrera()
       assert.equals(antigualla, centroDeInscripcion.ganador())

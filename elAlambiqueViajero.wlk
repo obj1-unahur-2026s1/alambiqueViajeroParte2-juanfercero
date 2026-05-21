@@ -1,3 +1,5 @@
+import inscripcion.*
+
 object luke{
     var cantidadViajes = 0
     var recuerdo = null
@@ -55,14 +57,19 @@ object lasVegas{
 }
 
 object antigualla {
-    var gangsters = 10
+    var gangsters = 7
     method puedeFuncionar() = gangsters.even()
     method rapido() = gangsters > 6
     method desgaste(){
         gangsters = gangsters -2
     }
     method patenteValida() = chatarra.rapido() 
-
+    method bajarGangsters(cantidad) {
+        gangsters = gangsters - cantidad
+    }
+    method subirGangsters(cantidad) {
+        gangsters = gangsters + cantidad
+    }
 }
 object chatarra {
     var cañones = 10
@@ -105,4 +112,29 @@ object moto{
     method puedeFuncionar() = not moto.rapido()
     method desgaste() { }
     method patenteValida() = false
+}
+
+object vehiculoDePierreNodoyunaYPatan{
+    method rapido() = true
+    method puedeFuncionar() = true
+    method desgaste() {
+        centroDeInscripcion.vehiculosQueLlegaronALaCarrera().forEach({vehiculo => vehiculo.desgaste()})
+    }
+    method patenteValida() = false
+}
+
+object vehiculoDeProfesorLocovich{
+    const vehiculosAlosQueSePuedeConvertir = [antigualla, chatarra]
+    var vehiculoConvertido = antigualla
+
+    method convertir(vehiculo) {
+        if(vehiculosAlosQueSePuedeConvertir.contains(vehiculo)) {
+            vehiculoConvertido = vehiculo
+        }
+    }
+
+    method rapido() = vehiculoConvertido.rapido()
+    method puedeFuncionar() = vehiculoConvertido.puedeFuncionar()
+    method desgaste() = vehiculoConvertido.desgaste()
+    method patenteValida() = vehiculoConvertido.patenteValida()
 }
