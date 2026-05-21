@@ -1,4 +1,6 @@
 import elAlambiqueViajero.*
+import inscripcion.*
+
 test "luke cuenta cuando va de viaje"{
     luke.viajar(paris)
     assert.equals(1, luke.cantidadViajes())
@@ -61,4 +63,21 @@ test "luke viaja a hurlingham en el convertible convertido en chatarra" {
   assert.equals("sticker de la Unahur",luke.recuerdo())
   assert.equals(5,chatarra.cañones())
 
+  }
+
+
+
+  describe "tests mios" {
+    test "nueva ciudad" {
+      centroDeInscripcion.recibirVehiculo(chatarra)
+      centroDeInscripcion.recibirVehiculo(moto)
+      centroDeInscripcion.cambiarCiudad(bagdad)
+      assert.equals(2, centroDeInscripcion.inscriptos().size())
+    }
+
+    test"paris"{
+      centroDeInscripcion.recibirVehiculo(chatarra)
+      centroDeInscripcion.recibirVehiculo(moto)
+      assert.equals(1, centroDeInscripcion.inscriptos().size())
+    }
   }
