@@ -89,3 +89,5 @@ test "luke viaja a hurlingham en el convertible convertido en chatarra" {
       assert.equals(antigualla, centroDeInscripcion.ganador())
     }
   }
+
+  // testeo un push antes del parcial
